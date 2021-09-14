@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Your Online Shop</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="{% url 'home' %}">Barchasi</a>
+                    </li>
+                </ul>
+                {% for x in categoryalar %}
+                    <ul class="nav-items">
+                        <li class="nav-link">
+                            <a href="{% url 'home' x.id %}">{{ x.nomi }}</a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i  style="color: rgb(25, 170, 189);" class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/web_dewoloper_1/"><i  style="color: rgb(128, 23, 155);" class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC4kzn1A_omythF9_Mytt3Rw"><i  style="color: red;" class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    {% block contend %}
+
+    {% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About us</h2>
+                <p>Bu Web Shifa 2021-yil 11-sentabr kuni KXayitov Javohir tamonidan yaratildi!</p>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="{% static 'assets/instagram/thumb-card3.png' %}" alt="insta1">
+                    <img src="{% static 'assets/instagram/thumb-card4.png' %}" alt="insta2">
+                    <img src="{% static 'assets/instagram/thumb-card5.png' %}" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="{% static 'assets/instagram/thumb-card6.png' %}" alt="insta4">
+                    <img src="{% static 'assets/instagram/thumb-card7.png' %}" alt="insta5">
+                    <img src="{% static 'assets/instagram/thumb-card8.png' %}" alt="insta6">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow us</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <a href="#"><i  style="color: rgb(25, 170, 189);" class="fab fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/web_dewoloper_1/"><i  style="color: rgb(128, 23, 155);" class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC4kzn1A_omythF9_Mytt3Rw"><i  style="color: red;" class="fab fa-youtube"></i></a>
+                    <a href="#" style="color: aliceblue;"><i style="color: rgb(64, 187, 40);" class="fas fa-phone"></i>+998932410907</a>
+                </div>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                Copyright ©2021 All rights reserved | made by
+                <a href="https://www.youtube.com/channel/UC4kzn1A_omythF9_Mytt3Rw" target="_black">KXayitov Javohir <i  style="color: red;" class="fab fa-youtube"></i>
+                    Channel</a>
+            </h4>
+        </div>
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+
+    <!-- Jquery Library file -->
+    <script src="{% static 'js/Jquery3.4.1.min.js' %}"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

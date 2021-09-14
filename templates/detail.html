@@ -1,0 +1,26 @@
+{% extends "shop/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Detail{% endblock %}</title>
+</head>
+<body>
+{% block contend %}
+<br><br>
+    <h2 style="text-align: center;">The best choices are only with us!</h2>
+    <br><br>
+    <div>
+        <h2 style="padding-left: 450px; color: rgb(109, 175, 206)  ;">{{ page.name }}</h2>
+        <br>
+        <h3 style="padding-left: 1100px; position: absolute;">{{ page.body }}</h3>  
+        <img src="{{ page.photo.url }}" style="object-fit: cover; position: relative; padding-left: 70px; width: 900px; height: 600px;">
+    </div>
+    <br><br><br>
+        <h3 style="padding-left: 500px; color:greenyellow;">Cost: ${{ page.cost }}</h3>
+        <br><br><br><br><br><br><br><br>
+{% endblock %}
+</body>
+</html>`

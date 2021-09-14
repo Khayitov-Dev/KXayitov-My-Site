@@ -1,0 +1,28 @@
+{% extends "shop/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shop{% endblock %}</title>
+</head>
+<body>
+{% block contend %}
+    <h2 style="text-align: center;">The best choices are only with us!</h2>
+    {% for x in shop %}
+        <div style="display: inline-block; border-bottom: 2px solid rgb(97, 84, 84)">
+            <a href="{% url 'detail' x.id %}">
+                <h2 style="text-align: center; color: rgb(109, 175, 206)  ;">{{ x.name }}</h2>
+                <div>
+                    <img src="{{ x.photo.url }}" style="margin: 21px; margin-right: 9px; width: 473px; height: 400px;object-fit: cover;">
+                </div>
+                <h3 style="text-align: center; color:greenyellow;">${{ x.cost }} <span style="margin-left: 20px; text-decoration: line-through;color: red;">${{ x.old_cost }}</span></h3>
+                <br>
+                <br>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
